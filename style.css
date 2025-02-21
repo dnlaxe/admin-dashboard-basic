@@ -55,12 +55,19 @@
     padding: 0;
     box-sizing: border-box;
     display: grid;
-    grid-template-rows: 200px 1fr 100px;
-    grid-template-columns: 300px 1fr;
+    grid-template-rows: 220px 1fr 40px;
+    grid-template-columns: 280px 1fr;
     grid-template-areas: "left-sidebar header"
                          "left-sidebar main"
                          "left-sidebar footer";
     height: 100%;
+    color: #022e40;
+    border-color: #022e40;
+    background-color: #2d9aa6;
+}
+
+h2, h3 {
+    color: black;
 }
 
 /*header*/
@@ -68,7 +75,13 @@
 .header {
     grid-area: header;
     display: grid;
-    grid-template-rows: 80px 120px;
+    grid-template-rows: 70px 110px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: #f4f9f8;
+    box-shadow: 0 0 10px #3c3d3d;
 }
 
 .header-top {
@@ -78,7 +91,7 @@
 
 .header-bottom {
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr auto;
 }
 
 /*header-top*/
@@ -91,12 +104,12 @@
 
 #search {
     height: 40px;
-    margin-left: 20px;
+    margin-left: 30px;
     margin-right: 20px;
 }
 
 #alert {
-    height: 40px
+    height: 40px;
 }
 
 input {
@@ -105,6 +118,13 @@ input {
     border-radius: 20px;
     padding: 0 15px;
     max-width: 400px;
+    border-style: solid;
+    border-color: #022e40;
+    border-width: 1px;
+}
+
+input[type="text"] {
+    background-color: white;
 }
 
 .header-top-right {
@@ -112,15 +132,17 @@ input {
     grid-template-columns: 1fr 1fr auto;
     gap: 20px;
     align-items: center;
-    padding-right: 30px;
+    padding-right: 60px;
+    padding-top: 20px;
 }
 
 .avatar-small {
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-color: grey;
+    background-color: white;
     border-style: solid;
+    border-width: 1px;
 }
 
 
@@ -129,21 +151,23 @@ input {
 .header-bottom-left {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: 40px 70px;
+    grid-template-rows: 38px 72px;
     grid-template-areas: "avatar greeting"
                          "avatar name";
 }
 
 .avatar {
     grid-area: avatar;
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     border-radius: 50%;
-    margin-left: 20px;
+    margin-left: 30px;
     margin-right: 20px;
-    background-color: grey;
+    margin-bottom: 20px;
+    background-color: white;
     border-style: solid;
     place-self: center;
+    border-width: 1px;
 }
 
 .greeting {
@@ -155,7 +179,7 @@ input {
 
 .name {
     grid-area: name;
-    font-size: 2em;
+    font-size: 2.2em;
     min-width: 300px;
     place-self: start;
 }
@@ -163,18 +187,26 @@ input {
 .header-bottom-right {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: start;
-    padding-top: 30px;
+    align-items: center;
+    padding-right: 50px;
+    gap: 40px;
 }
 
 button {
     cursor: pointer;
-    height: 50px;
+    height: 40px;
     width: 100px;
     border-style: solid;
-    border-radius: 12px;
-    background-color: white;
+    border-width: 1px;
+    border-color: #022e40;
+    border-radius: 20px;
+    background-color:#2d9aa6;
+    color:#f4f9f8;
     font-size: 1.2em;
+}
+
+button:hover {
+    font-weight: 900;
 }
 
 /*main*/
@@ -182,12 +214,14 @@ button {
 .main {
     grid-area: main;
     display: grid;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 1fr 270px;
+    background-color: #f4f9f8;
+    border-radius: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #3c3d3d;
 }
 
-.main h3 {
-    margin-bottom: 10px;
-}
 
 /*main-left*/
 
@@ -197,8 +231,9 @@ button {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
     gap: 20px;
+    margin-top: 10px;
 }
 
 .card {
@@ -207,10 +242,16 @@ button {
     grid-template-columns: 10px 1fr;
     border-style: solid;
     border-radius: 12px;
+    background-color: white;
+    border-width: 1px;
+}
+
+.card:hover, .side-card:hover {
+    box-shadow: 1px 1px 20px #919e9b;
 }
 
 .card-border-left {
-    background-color: black;
+    background-color: #2d9aa6;
     border-radius: 12px 0 0 12px;
 }
 
@@ -228,11 +269,7 @@ button {
 .card-content {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding: 10px;
-}
-
-.card-content h3 {
-    margin-bottom: 0;
+    padding: 15px;
 }
 
 /*main-right*/
@@ -245,8 +282,11 @@ button {
     height: auto;
     width: 250px;
     margin-bottom: 20px;
+    margin-top: 10px;
     border-style: solid;
     border-radius: 12px;
+    background-color: white;
+    border-width: 1px;
 }
 
 .announcements {
@@ -257,8 +297,9 @@ button {
 .trending {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    padding: 10px;
-    gap: 10px;
+    padding: 15px;
+    gap: 15px;
+    margin-bottom: 40px;
 }
 
 .trending-cards {
@@ -282,7 +323,7 @@ button {
 }
 
 .line {
-    background-color: black;
+    background-color:#022e40;
     margin: 0 30px;
 }
 
@@ -294,10 +335,12 @@ button {
 
 ul img {
     height: 40px;
+    filter: invert(1);
 }
 
 ul {
     padding: 0;
+    color: white;
 }
 
 li {
@@ -305,10 +348,14 @@ li {
     display: grid;
     grid-template-columns: 50px 1fr;
     align-items: center;
-    font-size: 1.2em;
-    padding-left: 35px;
+    font-size: 1.3em;
+    padding-left: 40px;
     padding-right: 20px;
     margin-bottom: 10px;
+}
+
+li:hover {
+    font-weight: 700;
 }
 
 li span {
@@ -317,25 +364,31 @@ li span {
 
 .dashboard img {
     height: 60px;
+    filter: invert(1);
 }
 
 .dashboard {
     display: grid;
     grid-template-columns: 60px 1fr;
     align-items: center;
-    margin: 20px 0;
-    padding-left: 25px;
+    padding-left: 30px;
     padding-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    color: white;
 }
+
 .dashboard h1 {
     padding-left: 10px;
-    font-size: 2em;
 }
 
 .footer {
     grid-area: footer;
+    background-color:#2d9aa6;
+    justify-items: end;
+    padding-right: 30px;
 }
 
-li, .card, .card.icons, .header-top-right *, .trending-cards div {
+li, .card, .card.icons, .header-top-right *, .side-card {
     cursor: pointer;
 }
