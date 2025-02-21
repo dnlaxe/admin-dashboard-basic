@@ -216,7 +216,7 @@ button:hover {
 .main {
     grid-area: main;
     display: grid;
-    grid-template-columns: 1fr 270px;
+    grid-template-columns: 1fr 290px;
     background-color: #f4f9f8;
     border-radius: 20px;
     margin-right: 20px;
@@ -283,7 +283,7 @@ button:hover {
 
 .side-card {
     height: auto;
-    width: 250px;
+    width: 270px;
     margin-bottom: 20px;
     margin-top: 10px;
     border-style: solid;
